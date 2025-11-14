@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClimaStrategy Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌦️ ClimaStrategy</h1>
+            <p>Planeje sua atividade com inteligência.</p>
+        </header>
+
+        <section class="card-form">
+            <input type="text" id="cidadeInput" placeholder="Digite a cidade (ex: Londres, Rio de Janeiro)">
+            
+            <select id="atividadeSelect">
+                <option value="Correr">🏃 Correr</option>
+                <option value="Piquenique">🧺 Piquenique</option>
+                <option value="Praia">🏖️ Praia</option>
+            </select>
+
+            <button onclick="criarCard()">Adicionar Card</button>
+        </section>
+
+        <hr>
+
+        <main id="dashboard" class="grid-container">
+            </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

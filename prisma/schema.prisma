@@ -1,0 +1,36 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// O "Card" salvo no Dashboard
+model Card {
+  id        Int      @id @default(autoincrement())
+  cidade    String
+  atividade String   // Ex: "Correr", "Praia"
+  temp      Float    // Temperatura no momento da consulta
+  status    Boolean  // true = Apropriado, false = Inapropriado
+  mensagem  String   // Ex: "Está chovendo, melhor não."
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Histórico de Operações (Log de auditoria)
+model Historico {
+  id        Int      @id @default(autoincrement())
+  acao      String   // "CRIAR", "ATUALIZAR", "DELETAR"
+  detalhe   String   // Ex: "Card ID 5 criado para cidade Londres"
+  data      DateTime @default(now())
+}
+
+// Tabela auxiliar apenas para listar opções disponíveis no Frontend (Seed)
+model AtividadeDisponivel {
+  nome String @id
+}

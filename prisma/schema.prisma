@@ -10,14 +10,18 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// O "Card" salvo no Dashboard
 model Card {
   id        Int      @id @default(autoincrement())
   cidade    String
-  atividade String   // Ex: "Correr", "Praia"
-  temp      Float    // Temperatura no momento da consulta
-  status    Boolean  // true = Apropriado, false = Inapropriado
-  mensagem  String   // Ex: "Está chovendo, melhor não."
+  atividade String
+  temp      Float
+  // NOVOS CAMPOS ---
+  umidade   Int      @default(0)
+  vento     Float    @default(0.0)
+  descricao String   @default("Não informado") 
+  // ----------------
+  status    Boolean
+  mensagem  String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }

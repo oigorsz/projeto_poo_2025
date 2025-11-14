@@ -27,6 +27,9 @@ export class CardController {
                     cidade: dadosClima.cidade, // Usa o nome oficial da API
                     atividade,
                     temp: dadosClima.temp,
+                    umidade: dadosClima.umidade,
+                    vento: dadosClima.vento,
+                    descricao: dadosClima.descricao,
                     status: validacao.viavel,
                     mensagem: validacao.mensagem
                 }
@@ -73,6 +76,9 @@ export class CardController {
                 where: { id: Number(id) },
                 data: {
                     temp: dadosClima.temp,
+                    umidade: dadosClima.umidade,
+                    vento: dadosClima.vento,
+                    descricao: dadosClima.descricao,
                     status: validacao.viavel,
                     mensagem: validacao.mensagem
                 }

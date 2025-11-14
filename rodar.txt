@@ -1,0 +1,1 @@
+executar npx nodemon src/server.ts

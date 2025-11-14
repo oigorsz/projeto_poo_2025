@@ -70,12 +70,26 @@ function montarHTMLCard(card) {
     const classeStatus = card.status ? 'aprovado' : 'reprovado';
     const statusTexto = card.status ? '✅ Aprovado' : '❌ Inviável';
     
+    // Capitalizar a descrição (ex: "chuva leve" -> "Chuva Leve")
+    const descricaoFormatada = card.descricao.charAt(0).toUpperCase() + card.descricao.slice(1);
+
     return `
         <div class="card ${classeStatus}">
             <h3>${card.cidade}</h3>
-            <p>Atividade: <strong>${card.atividade}</strong></p>
-            <div class="temp">${card.temp}°C</div>
-            <p>${statusTexto}</p>
+            <p class="atividade-tag">${card.atividade}</p>
+            
+            <div class="main-info">
+                <div class="temp">${card.temp}°C</div>
+                <div class="clima-desc">${descricaoFormatada}</div>
+            </div>
+
+            <div class="details">
+                <span>💧 Umidade: <strong>${card.umidade}%</strong></span>
+                <span>💨 Vento: <strong>${card.vento} m/s</strong></span>
+            </div>
+
+            <hr>
+            <p class="status">${statusTexto}</p>
             <span class="msg">"${card.mensagem}"</span>
             
             <div class="actions">

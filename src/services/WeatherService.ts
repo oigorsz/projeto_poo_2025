@@ -19,8 +19,9 @@ export class WeatherService {
             // Retornamos apenas o que nos interessa
             return {
                 temp: response.data.main.temp,
-                umidade: response.data.main.humidity,
-                descricao: response.data.weather[0].description,
+                umidade: response.data.main.humidity,     // NOVO
+                vento: response.data.wind.speed,          // NOVO
+                descricao: response.data.weather[0].description, // JÁ TINHA, MAS AGORA VAMOS USAR
                 cidade: response.data.name
             };
         } catch (error) {

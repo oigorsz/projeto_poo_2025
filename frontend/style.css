@@ -76,3 +76,36 @@ button:hover { background-color: #0056b3; }
 
 .btn-update { background-color: #ffc107; color: #000; font-size: 0.8em; }
 .btn-delete { background-color: #dc3545; font-size: 0.8em; }
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    background: #f8f9fa;
+    padding: 8px;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.clima-desc {
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #666;
+}
+
+.atividade-tag {
+    background-color: #e9ecef;
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.85em;
+    margin-bottom: 10px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 10px 0;
+}
